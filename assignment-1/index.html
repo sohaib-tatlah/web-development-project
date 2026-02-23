@@ -1,174 +1,103 @@
-<!DOCTYPE html> <!-- Declares this as an HTML5 document -->
-<html lang="en"> <!-- Root element with language set to English -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- META TAGS: Provide information about the webpage -->
-    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 (supports all characters) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes page responsive on mobile devices -->
-    
-    <!-- TITLE: Shows in browser tab -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sveston Watches - Premium Timepieces</title>
-    
-    <!-- EXTERNAL STYLESHEET: Links to our CSS file for styling -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- GOOGLE FONTS: Import custom fonts from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Pre-connects to Google Fonts for faster loading -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Pre-connects to static content server -->
-    <!-- Imports two font families: Playfair Display (for headings) and Poppins (for body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body> <!-- Main content container for the entire page -->
+<body>
     
-    <!-- ========================================
-         HEADER SECTION (TOP OF PAGE)
-         Contains: Logo, Navigation Menu, Icons
-         ======================================== -->
-    <header> <!-- Semantic HTML5 tag for page header -->
-        <!-- Container div centers content and adds padding -->
+    <header>
         <div class="container header-content">
-            
-            <!-- LOGO: Brand name on the left side -->
             <div class="logo">
-                <h1>SVESTON</h1> <!-- Main heading with brand name -->
+                <h1>SVESTON</h1>
             </div>
-            
-            <!-- NAVIGATION: Main menu links -->
-            <nav> <!-- Semantic HTML5 tag for navigation -->
-                <ul class="nav-menu"> <!-- Unordered list for menu items -->
-                    <!-- Each list item (li) contains a link (a) to different sections -->
-                    <li><a href="#home">Home</a></li> <!-- Anchor tag links to home section -->
-                    <li><a href="#men">Men</a></li> <!-- Links to men's section -->
-                    <li><a href="#women">Women</a></li> <!-- Links to women's section -->
-                    <li><a href="#collections">Collections</a></li> <!-- Links to collections -->
-                    <li><a href="#sale">Sale</a></li> <!-- Links to sale section -->
-                    <li><a href="#contact">Contact</a></li> <!-- Links to contact section -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#sale">Sale</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            
-            <!-- ICONS: Search, User Profile, Shopping Cart (on the right side) -->
-            <div class="header-icons">
-                <span class="icon">🔍</span> <!-- Search icon (emoji) -->
-                <span class="icon">👤</span> <!-- User account icon (emoji) -->
-                <span class="icon">🛒</span> <!-- Shopping cart icon (emoji) -->
-            </div>
+            <div class="header-icons"></div>
         </div>
     </header>
 
-    <!-- ========================================
-         HERO SECTION (MAIN BANNER)
-         Large banner with heading and call-to-action button
-         ======================================== -->
-    <section class="hero"> <!-- Section tag groups related content -->
-        <div class="hero-content"> <!-- Container for centered content -->
-            <h2 class="hero-title">Timeless Elegance</h2> <!-- Main headline text -->
-            <p class="hero-tagline">Discover luxury watches crafted for perfection</p> <!-- Subtitle/description -->
-            <a href="#products" class="btn-primary">Shop Now</a> <!-- Call-to-action button linking to products -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Timeless Elegance</h2>
+            <p class="hero-tagline">Discover luxury watches crafted for perfection</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
         </div>
     </section>
 
-    <!-- ========================================
-         MAIN CONTENT AREA
-         Contains all primary page content
-         ======================================== -->
-    <main> <!-- Semantic HTML5 tag for main content -->
+        <main>
         
-        <!-- ========================================
-             FEATURED CATEGORIES SECTION
-             Displays 4 product categories in a grid
-             ======================================== -->
-        <section class="featured-categories"> <!-- Section for product categories -->
-            <div class="container"> <!-- Container centers content and adds padding -->
-                
-                <!-- Section Title -->
+        <section class="featured-categories">
+            <div class="container">
                 <h2 class="section-title">Shop By Category</h2>
-                
-                <!-- Grid container holds all category cards -->
                 <div class="category-grid">
-                    
-                    <!-- CATEGORY CARD 1: Men's Collection -->
-                    <div class="category-card"> <!-- Individual category card -->
-                        <div class="category-image"> <!-- Container for category image -->
-                            <!-- Placeholder with gradient background (replace with actual image later) -->
-                            <div class="category-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                                <span class="placeholder-text">Men's Watches</span> <!-- Text displayed on placeholder -->
-                            </div>
-                        </div>
-                        <h3 class="category-title">Men's Collection</h3> <!-- Category name below image -->
-                    </div>
-                    
-                    <!-- CATEGORY CARD 2: Women's Collection -->
                     <div class="category-card">
                         <div class="category-image">
-                            <!-- Gradient placeholder with pink/red colors -->
+                            <div class="category-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <span class="placeholder-text">Men's Watches</span>
+                            </div>
+                        </div>
+                        <h3 class="category-title">Men's Collection</h3>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
                             <div class="category-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                                 <span class="placeholder-text">Women's Watches</span>
                             </div>
                         </div>
                         <h3 class="category-title">Women's Collection</h3>
                     </div>
-                    
-                    <!-- CATEGORY CARD 3: Sport Collection -->
                     <div class="category-card">
                         <div class="category-image">
-                            <!-- Gradient placeholder with blue colors -->
                             <div class="category-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                                 <span class="placeholder-text">Sport Watches</span>
                             </div>
                         </div>
                         <h3 class="category-title">Sport Collection</h3>
                     </div>
-                    
-                    <!-- CATEGORY CARD 4: Luxury Collection -->
                     <div class="category-card">
                         <div class="category-image">
-                            <!-- Gradient placeholder with warm colors -->
                             <div class="category-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
                                 <span class="placeholder-text">Luxury Watches</span>
                             </div>
                         </div>
                         <h3 class="category-title">Luxury Collection</h3>
                     </div>
-                    
-                </div> <!-- End of category-grid -->
-            </div> <!-- End of container -->
-        </section> <!-- End of featured-categories section -->
+                </div>
+            </div>
+        </section>
 
-        <!-- ========================================
-             PRODUCTS SECTION (BEST SELLERS)
-             Displays 8 products in a grid layout (4 per row on desktop)
-             ======================================== -->
-        <section class="products" id="products"> <!-- Section with id for anchor linking -->
-            <div class="container"> <!-- Container centers content -->
-                
-                <!-- Section Title -->
+        <section class="products" id="products">
+            <div class="container">
                 <h2 class="section-title">Best Sellers</h2>
-                
-                <!-- Grid container holds all product cards -->
                 <div class="product-grid">
-                    
-                    <!-- ===== PRODUCT CARD 1: Heritage Classic ===== -->
-                    <div class="product-card"> <!-- Individual product card -->
-                        
-                        <!-- Product Image Container -->
-                        <div class="product-image">
-                            <!-- Gradient placeholder (replace with <img> tag later) -->
-                            <div class="product-placeholder" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
-                                <span class="placeholder-text">Classic Watch</span> <!-- Placeholder text -->
-                            </div>
-                        </div>
-                        
-                        <!-- Product Information Container -->
-                        <div class="product-info">
-                            <h3 class="product-name">Heritage Classic</h3> <!-- Product name -->
-                            <p class="product-price">$299.99</p> <!-- Product price -->
-                            <button class="btn-cart">Add to Cart</button> <!-- Add to cart button -->
-                        </div>
-                    </div>
-                    
-                    <!-- ===== PRODUCT CARD 2: Sport Pro X ===== -->
                     <div class="product-card">
                         <div class="product-image">
-                            <!-- Dark gradient for sport watch theme -->
+                            <div class="product-placeholder" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+                                <span class="placeholder-text">Classic Watch</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Heritage Classic</h3>
+                            <p class="product-price">$299.99</p>
+                            <button class="btn-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
                                 <span class="placeholder-text">Sport Watch</span>
                             </div>
@@ -179,9 +108,6 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                    <!-- ===== PRODUCT CARD 3: Elegant Rose ===== -->
-                    <!-- ===== PRODUCT CARD 3: Elegant Rose ===== -->
                     <div class="product-card">
                         <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);">
@@ -194,8 +120,6 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                    <!-- ===== PRODUCT CARD 4: Royal Gold ===== -->
                     <div class="product-card">
                         <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #c94b4b 0%, #4b134f 100%);">
@@ -208,8 +132,6 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                    <!-- ===== PRODUCT CARD 5: Modern Minimalist ===== -->
                     <div class="product-card">
                         <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);">
@@ -222,8 +144,6 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                    <!-- ===== PRODUCT CARD 6: Vintage Bronze ===== -->
                     <div class="product-card">
                         <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);">
@@ -236,8 +156,6 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                    <!-- ===== PRODUCT CARD 7: Fashion Elite ===== -->
                     <div class="product-card">
                         <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);">
@@ -250,8 +168,6 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                    <!-- ===== PRODUCT CARD 8: Black Diamond ===== -->
                     <div class="product-card">
                         <div class="product-image">
                             <div class="product-placeholder" style="background: linear-gradient(135deg, #000000 0%, #434343 100%);">
@@ -264,89 +180,65 @@
                             <button class="btn-cart">Add to Cart</button>
                         </div>
                     </div>
-                    
-                </div> <!-- End of product-grid -->
-            </div> <!-- End of container -->
-        </section> <!-- End of products section -->
-
-        <!-- ========================================
-             PROMOTIONAL BANNER SECTION
-             Full-width banner with special offer
-             ======================================== -->
-        <section class="promo-banner"> <!-- Promo section with background image -->
-            <div class="promo-content"> <!-- Container for centered text and button -->
-                <h2 class="promo-title">Limited Time Offer</h2> <!-- Main promotional heading -->
-                <p class="promo-text">Get 30% off on selected luxury timepieces</p> <!-- Promotional message -->
-                <a href="#sale" class="btn-secondary">Explore Deals</a> <!-- Call-to-action button -->
+                </div>
             </div>
         </section>
 
-    </main> <!-- End of main content area -->
+        <section class="promo-banner">
+            <div class="promo-content">
+                <h2 class="promo-title">Limited Time Offer</h2>
+                <p class="promo-text">Get 30% off on selected luxury timepieces</p>
+                <a href="#sale" class="btn-secondary">Explore Deals</a>
+            </div>
+        </section>
 
-    <!-- ========================================
-         FOOTER SECTION
-         Contains 4 columns of links and copyright info
-         ======================================== -->
-    <footer> <!-- Semantic HTML5 tag for page footer -->
-        <div class="container"> <!-- Container for centering footer content -->
-            
-            <!-- Grid container with 4 columns -->
+    </main>
+
+    <footer>
+        <div class="container">
             <div class="footer-grid">
-                
-                <!-- COLUMN 1: About Sveston -->
                 <div class="footer-column">
-                    <h4>About Sveston</h4> <!-- Column heading -->
-                    <ul> <!-- Unordered list of links -->
-                        <li><a href="#about">Our Story</a></li> <!-- Link to about page -->
-                        <li><a href="#craftsmanship">Craftsmanship</a></li> <!-- Link to craftsmanship -->
-                        <li><a href="#sustainability">Sustainability</a></li> <!-- Link to sustainability -->
-                        <li><a href="#careers">Careers</a></li> <!-- Link to careers -->
-                    </ul>
-                </div>
-                
-                <!-- COLUMN 2: Customer Service -->
-                <div class="footer-column">
-                    <h4>Customer Service</h4> <!-- Column heading -->
+                    <h4>About Sveston</h4>
                     <ul>
-                        <li><a href="#shipping">Shipping Info</a></li> <!-- Link to shipping info -->
-                        <li><a href="#returns">Returns & Exchanges</a></li> <!-- Link to returns policy -->
-                        <li><a href="#warranty">Warranty</a></li> <!-- Link to warranty info -->
-                        <li><a href="#faq">FAQ</a></li> <!-- Link to frequently asked questions -->
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#craftsmanship">Craftsmanship</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#careers">Careers</a></li>
                     </ul>
                 </div>
-                
-                <!-- COLUMN 3: Quick Links -->
                 <div class="footer-column">
-                    <h4>Quick Links</h4> <!-- Column heading -->
+                    <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="#account">My Account</a></li> <!-- Link to user account -->
-                        <li><a href="#track">Track Order</a></li> <!-- Link to order tracking -->
-                        <li><a href="#gift">Gift Cards</a></li> <!-- Link to gift cards -->
-                        <li><a href="#stores">Store Locator</a></li> <!-- Link to physical stores -->
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns & Exchanges</a></li>
+                        <li><a href="#warranty">Warranty</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
-                
-                <!-- COLUMN 4: Social Media Links -->
                 <div class="footer-column">
-                    <h4>Follow Us</h4> <!-- Column heading -->
-                    <ul class="social-links"> <!-- List of social media links -->
-                        <li><a href="#facebook">Facebook</a></li> <!-- Link to Facebook page -->
-                        <li><a href="#instagram">Instagram</a></li> <!-- Link to Instagram profile -->
-                        <li><a href="#twitter">Twitter</a></li> <!-- Link to Twitter profile -->
-                        <li><a href="#pinterest">Pinterest</a></li> <!-- Link to Pinterest profile -->
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#account">My Account</a></li>
+                        <li><a href="#track">Track Order</a></li>
+                        <li><a href="#gift">Gift Cards</a></li>
+                        <li><a href="#stores">Store Locator</a></li>
                     </ul>
                 </div>
-                
-            </div> <!-- End of footer-grid -->
-            
-            <!-- Footer Bottom: Copyright and Legal Links -->
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <ul class="social-links">
+                        <li><a href="#facebook">Facebook</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#twitter">Twitter</a></li>
+                        <li><a href="#pinterest">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Sveston Watches. All Rights Reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
-                <!-- &copy; is the copyright symbol (©) -->
             </div>
-            
-        </div> <!-- End of container -->
-    </footer> <!-- End of footer -->
+        </div>
+    </footer>
 
-</body> <!-- End of body tag -->
-</html> <!-- End of HTML document -->
+</body>
+</html>

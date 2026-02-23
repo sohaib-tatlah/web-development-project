@@ -1,1086 +1,590 @@
-/*
-================================================================================
-ASSIGNMENT 1 - SVESTON WATCHES LANDING PAGE
-================================================================================
-Styling for Assignment 1 – Sveston Inspired Landing Page
-Use plain CSS only.
-Use Flexbox and Grid.
-Add responsive media queries.
-Keep code clean and structured.
-================================================================================
-*/
-
-/* ========================================
-   CSS RESET & BASE STYLES
-   ======================================== */
-
-/* 
-   UNIVERSAL SELECTOR (*)
-   Applies to ALL elements on the page
-*/
 * {
-    margin: 0;          /* Removes default margin from all elements */
-    padding: 0;         /* Removes default padding from all elements */
-    box-sizing: border-box;  /* Makes width/height include padding and border (easier layout control) */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 
-   BODY TAG STYLING
-   Sets default styles for the entire page
-*/
 body {
-    font-family: 'Poppins', sans-serif;  /* Sets default font to Poppins (Google Font) */
-    line-height: 1.6;                     /* Space between lines (1.6 = 160% of font size) */
-    color: #333;                          /* Default text color (dark gray) */
-    background-color: #fff;               /* Page background color (white) */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
 }
 
-/* 
-   HEADINGS STYLING (H1 to H6)
-   All heading tags use decorative serif font
-*/
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;  /* Serif font for elegant look */
-    font-weight: 600;                        /* Semi-bold weight */
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
 }
 
-/* 
-   ANCHOR/LINK STYLING
-   Removes default underline and sets smooth color transitions
-*/
 a {
-    text-decoration: none;      /* Removes underline from links */
-    color: inherit;             /* Inherits color from parent element */
-    transition: color 0.3s ease; /* Smooth color change on hover (0.3 seconds) */
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
-/* 
-   UNORDERED LIST STYLING
-   Removes default bullet points from lists
-*/
 ul {
-    list-style: none;  /* Removes bullet points/numbers from lists */
+    list-style: none;
 }
 
-/* 
-   IMAGE STYLING
-   Makes images responsive and removes inline spacing
-*/
 img {
-    max-width: 100%;    /* Image never exceeds container width (responsive) */
-    height: auto;       /* Maintains image aspect ratio */
-    display: block;     /* Removes inline spacing below image */
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* 
-   BUTTON STYLING
-   Sets default button behavior
-*/
 button {
-    cursor: pointer;    /* Shows hand cursor on hover (indicates clickable) */
-    border: none;       /* Removes default button border */
-    outline: none;      /* Removes focus outline (will add custom one later) */
-    font-family: inherit; /* Inherits font from parent (Poppins from body) */
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
 }
 
-/* ========================================
-   UTILITY CLASSES
-   Reusable classes used throughout the page
-   ======================================== */
-
-/* 
-   CONTAINER CLASS
-   Centers content and adds horizontal padding
-   Used in: header, categories, products, footer
-*/
 .container {
-    max-width: 1200px;     /* Maximum width (prevents stretching on large screens) */
-    margin: 0 auto;        /* Centers horizontally (0 top/bottom, auto left/right) */
-    padding: 0 20px;       /* Adds 20px padding on left and right sides */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* ========================================
-   HEADER SECTION
-   Sticky navigation bar at top of page
-   ======================================== */
-
-/* 
-   HEADER TAG
-   Main navigation container with sticky positioning
-*/
 header {
-    background-color: #fff;              /* White background */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow below header (x, y, blur, color) */
-    position: sticky;                     /* Sticks to top when scrolling */
-    top: 0;                              /* Stays at top of viewport */
-    z-index: 1000;                       /* Appears above other content (higher = on top) */
-    padding: 20px 0;                     /* 20px padding top and bottom */
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
 }
 
-/* 
-   HEADER CONTENT
-   Uses Flexbox to arrange logo, nav, and icons horizontally
-*/
 .header-content {
-    display: flex;              /* Enables Flexbox layout */
-    justify-content: space-between;  /* Spreads items: logo left, nav center, icons right */
-    align-items: center;        /* Vertically centers all items */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* 
-   LOGO STYLING
-   Brand name on the left side
-*/
 .logo h1 {
-    font-size: 28px;           /* Large text size */
-    font-weight: 700;          /* Bold weight */
-    letter-spacing: 3px;       /* Space between letters (elegant look) */
-    color: #1a1a1a;            /* Almost black color */
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #1a1a1a;
 }
 
-/* ========================================
-   NAVIGATION MENU
-   ======================================== */
-
-/* 
-   NAV CONTAINER
-   Centers navigation in the header
-*/
 nav {
-    flex: 1;                   /* Takes up available space (pushes logo left, icons right) */
-    display: flex;             /* Enables Flexbox */
-    justify-content: center;   /* Centers navigation menu horizontally */
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-/* 
-   NAVIGATION MENU LIST
-   Horizontal list of menu items
-*/
 .nav-menu {
-    display: flex;             /* Arranges menu items horizontally */
-    gap: 35px;                 /* 35px space between each menu item */
-    align-items: center;       /* Vertically centers items */
+    display: flex;
+    gap: 35px;
+    align-items: center;
 }
 
-/* 
-   NAVIGATION LINKS
-   Individual menu link styling
-*/
 .nav-menu li a {
-    font-size: 15px;           /* Link text size */
-    font-weight: 500;          /* Medium weight */
-    color: #444;               /* Dark gray color */
-    text-transform: uppercase; /* Makes text UPPERCASE */
-    letter-spacing: 1px;       /* Slight spacing between letters */
-    transition: color 0.3s ease;  /* Smooth color change on hover */
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
-/* 
-   NAVIGATION LINK HOVER EFFECT
-   Changes color when user hovers over link
-*/
 .nav-menu li a:hover {
-    color: #c9a961;            /* Changes to gold color on hover */
+    color: #c9a961;
 }
 
-/* ========================================
-   HEADER ICONS
-   Search, User, Cart icons on the right
-   ======================================== */
-
-/* 
-   ICONS CONTAINER
-   Horizontal arrangement of icons
-*/
 .header-icons {
-    display: flex;             /* Arranges icons horizontally */
-    gap: 20px;                 /* 20px space between icons */
-    font-size: 20px;           /* Icon size */
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
 }
 
-/* 
-   INDIVIDUAL ICON STYLING
-   Makes icons interactive
-*/
 .header-icons .icon {
-    cursor: pointer;           /* Shows hand cursor (indicates clickable) */
-    transition: transform 0.3s ease;  /* Smooth scale animation on hover */
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* 
-   ICON HOVER EFFECT
-   Slightly enlarges icon when hovering
-*/
 .header-icons .icon:hover {
-    transform: scale(1.2);     /* Scales icon to 120% of original size */
+    transform: scale(1.2);
 }
 
-/* ========================================
-   HERO SECTION (MAIN BANNER)
-   Full-width banner with background image
-   ======================================== */
-
-/* 
-   HERO CONTAINER
-   Full-screen banner with centered content
-*/
 .hero {
-    /* Background styling */
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);  /* Gradient background (fallback) */
-    background-image: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1600');  /* Background image */
-    background-size: cover;              /* Scales image to cover entire area */
-    background-position: center;         /* Centers the background image */
-    background-blend-mode: overlay;      /* Blends gradient with image (darkens image) */
-    
-    /* Layout */
-    height: 600px;                       /* Fixed height of 600 pixels */
-    display: flex;                       /* Enables Flexbox for centering */
-    align-items: center;                 /* Vertically centers content */
-    justify-content: center;             /* Horizontally centers content */
-    text-align: center;                  /* Centers text inside */
-    
-    /* Text color */
-    color: #fff;                         /* White text color */
-    position: relative;                  /* Allows z-index to work on child elements */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background-image: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
 }
 
-/* 
-   HERO CONTENT CONTAINER
-   Wrapper for centered text and button
-*/
 .hero-content {
-    z-index: 2;                          /* Appears above background (higher = on top) */
+    z-index: 2;
 }
 
-/* 
-   HERO TITLE
-   Main headline text
-*/
 .hero-title {
-    font-size: 64px;                     /* Very large text */
-    font-weight: 700;                    /* Bold weight */
-    margin-bottom: 20px;                 /* 20px space below title */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);  /* Shadow for readability (x, y, blur, color) */
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 
-   HERO TAGLINE
-   Subtitle below main headline
-*/
 .hero-tagline {
-    font-size: 20px;                     /* Medium text size */
-    margin-bottom: 35px;                 /* Space below before button */
-    font-weight: 300;                    /* Light weight */
-    letter-spacing: 1px;                 /* Slight letter spacing */
+    font-size: 20px;
+    margin-bottom: 35px;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
-/* 
-   PRIMARY BUTTON (Shop Now button)
-   Main call-to-action button styling
-*/
 .btn-primary {
-    display: inline-block;               /* Allows padding and makes button clickable area */
-    background-color: #c9a961;           /* Gold/tan background color */
-    color: #fff;                         /* White text */
-    padding: 15px 40px;                  /* 15px top/bottom, 40px left/right */
-    font-size: 16px;                     /* Button text size */
-    font-weight: 600;                    /* Semi-bold text */
-    text-transform: uppercase;           /* Makes text UPPERCASE */
-    letter-spacing: 1.5px;               /* Space between letters */
-    border-radius: 5px;                  /* Slightly rounded corners */
-    transition: all 0.3s ease;           /* Smooth transition for all properties */
-    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);  /* Subtle shadow below button */
+    display: inline-block;
+    background-color: #c9a961;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
 }
 
-/* 
-   PRIMARY BUTTON HOVER EFFECT
-   Changes when user hovers over button
-*/
 .btn-primary:hover {
-    background-color: #b89550;           /* Darker gold color */
-    transform: translateY(-3px);         /* Moves button up by 3px (lift effect) */
-    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);  /* Larger shadow (enhances lift) */
+    background-color: #b89550;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
 }
 
-/* ========================================
-   FEATURED CATEGORIES SECTION
-   4 category cards in a grid layout
-   ======================================== */
-
-/* 
-   CATEGORIES SECTION CONTAINER
-   Adds padding and background color
-*/
 .featured-categories {
-    padding: 80px 0;                     /* 80px padding top and bottom */
-    background-color: #f8f8f8;           /* Light gray background */
+    padding: 80px 0;
+    background-color: #f8f8f8;
 }
 
-/* 
-   SECTION TITLE
-   Reusable heading for different sections
-*/
 .section-title {
-    font-size: 42px;                     /* Large heading text */
-    text-align: center;                  /* Centers text horizontally */
-    margin-bottom: 50px;                 /* Space below title */
-    color: #1a1a1a;                      /* Almost black color */
-    font-weight: 600;                    /* Semi-bold weight */
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
-/* 
-   CATEGORY GRID
-   Uses CSS Grid to create 4 equal columns
-*/
 .category-grid {
-    display: grid;                       /* Enables CSS Grid layout */
-    grid-template-columns: repeat(4, 1fr);  /* Creates 4 columns of equal width (1fr = 1 fraction) */
-    gap: 30px;                           /* 30px space between grid items */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-/* 
-   INDIVIDUAL CATEGORY CARD
-   Contains image and title
-*/
 .category-card {
-    text-align: center;                  /* Centers text */
-    cursor: pointer;                     /* Shows hand cursor (indicates clickable) */
-    transition: transform 0.3s ease;     /* Smooth movement animation */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* 
-   CATEGORY CARD HOVER EFFECT
-   Lifts card up when hovering
-*/
 .category-card:hover {
-    transform: translateY(-10px);        /* Moves card up by 10px */
+    transform: translateY(-10px);
 }
 
-/* 
-   CATEGORY IMAGE CONTAINER
-   Wraps the image/placeholder
-*/
 .category-image {
-    overflow: hidden;                    /* Hides overflowing content (for zoom effect) */
-    border-radius: 10px;                 /* Rounded corners */
-    margin-bottom: 20px;                 /* Space below image */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 
-   CATEGORY PLACEHOLDER
-   Colored background (will be replaced with actual image)
-*/
 .category-placeholder {
-    height: 280px;                       /* Fixed height */
-    display: flex;                       /* Enables Flexbox for centering */
-    align-items: center;                 /* Vertically centers text */
-    justify-content: center;             /* Horizontally centers text */
-    transition: transform 0.3s ease;     /* Smooth zoom animation */
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-/* 
-   PLACEHOLDER ZOOM EFFECT ON HOVER
-   Zooms in on image when hovering over card
-*/
 .category-card:hover .category-placeholder {
-    transform: scale(1.05);              /* Scales to 105% (zoom in effect) */
+    transform: scale(1.05);
 }
 
-/* 
-   PLACEHOLDER TEXT
-   Text displayed on gradient background
-*/
 .placeholder-text {
-    color: #fff;                         /* White text */
-    font-size: 20px;                     /* Medium text size */
-    font-weight: 600;                    /* Semi-bold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  /* Shadow for readability */
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* 
-   CATEGORY TITLE
-   Text below the image
-*/
 .category-title {
-    font-size: 20px;                     /* Medium text size */
-    color: #333;                         /* Dark gray */
-    font-weight: 500;                    /* Medium weight */
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
 }
 
-/* ========================================
-   PRODUCT SECTION (BEST SELLERS)
-   8 product cards in a grid (4 per row)
-   ======================================== */
-
-/* 
-   PRODUCTS SECTION CONTAINER
-   White background with padding
-*/
 .products {
-    padding: 80px 0;                     /* 80px padding top and bottom */
-    background-color: #fff;              /* White background */
+    padding: 80px 0;
+    background-color: #fff;
 }
 
-/* 
-   PRODUCT GRID
-   Uses CSS Grid to create 4 columns
-*/
 .product-grid {
-    display: grid;                       /* Enables CSS Grid layout */
-    grid-template-columns: repeat(4, 1fr);  /* Creates 4 equal columns */
-    gap: 30px;                           /* 30px space between products */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-/* 
-   INDIVIDUAL PRODUCT CARD
-   Container for each product
-*/
 .product-card {
-    background-color: #fff;              /* White background */
-    border-radius: 10px;                 /* Rounded corners */
-    overflow: hidden;                    /* Hides overflowing content */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);  /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth animation for lift effect */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 
-   PRODUCT CARD HOVER EFFECT
-   Lifts card and enhances shadow
-*/
 .product-card:hover {
-    transform: translateY(-8px);         /* Moves card up by 8px */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);  /* Darker, larger shadow */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* 
-   PRODUCT IMAGE CONTAINER
-   Wraps product image
-*/
 .product-image {
-    overflow: hidden;                    /* Hides overflowing content (for zoom effect) */
+    overflow: hidden;
 }
 
-/* 
-   PRODUCT PLACEHOLDER
-   Gradient background (replace with actual images)
-*/
 .product-placeholder {
-    height: 280px;                       /* Fixed height */
-    display: flex;                       /* Enables Flexbox for centering */
-    align-items: center;                 /* Vertically centers text */
-    justify-content: center;             /* Horizontally centers text */
-    transition: transform 0.3s ease;     /* Smooth zoom animation */
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-/* 
-   PRODUCT PLACEHOLDER ZOOM EFFECT
-   Zooms in on image when hovering over card
-*/
 .product-card:hover .product-placeholder {
-    transform: scale(1.1);               /* Scales to 110% (zoom in) */
+    transform: scale(1.1);
 }
 
-/* 
-   PRODUCT INFO CONTAINER
-   Contains name, price, and button
-*/
 .product-info {
-    padding: 25px;                       /* 25px padding on all sides */
-    text-align: center;                  /* Centers text */
+    padding: 25px;
+    text-align: center;
 }
 
-/* 
-   PRODUCT NAME
-   Product title
-*/
 .product-name {
-    font-size: 18px;                     /* Medium text size */
-    margin-bottom: 10px;                 /* Space below name */
-    color: #333;                         /* Dark gray color */
-    font-weight: 500;                    /* Medium weight */
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500;
 }
 
-/* 
-   PRODUCT PRICE
-   Price in gold color
-*/
 .product-price {
-    font-size: 22px;                     /* Large text for emphasis */
-    color: #c9a961;                      /* Gold color (brand color) */
-    font-weight: 600;                    /* Semi-bold */
-    margin-bottom: 20px;                 /* Space before button */
+    font-size: 22px;
+    color: #c9a961;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-/* 
-   ADD TO CART BUTTON
-   Black button that turns gold on hover
-*/
 .btn-cart {
-    background-color: #1a1a1a;           /* Black background */
-    color: #fff;                         /* White text */
-    padding: 12px 30px;                  /* 12px top/bottom, 30px left/right */
-    font-size: 14px;                     /* Button text size */
-    font-weight: 500;                    /* Medium weight */
-    text-transform: uppercase;           /* Makes text UPPERCASE */
-    letter-spacing: 1px;                 /* Space between letters */
-    border-radius: 5px;                  /* Rounded corners */
-    transition: all 0.3s ease;           /* Smooth transition for all properties */
-    width: 100%;                         /* Full width of container */
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
-/* 
-   CART BUTTON HOVER EFFECT
-   Changes to gold color and lifts up
-*/
 .btn-cart:hover {
-    background-color: #c9a961;           /* Gold background */
-    transform: translateY(-2px);         /* Moves button up by 2px */
+    background-color: #c9a961;
+    transform: translateY(-2px);
 }
 
-/* ========================================
-   PROMOTIONAL BANNER SECTION
-   Full-width banner promoting special offers
-   ======================================== */
-
-/* 
-   PROMO BANNER CONTAINER
-   Large banner with background image and overlay
-*/
 .promo-banner {
-    /* Background styling */
-    background: linear-gradient(135deg, #c9a961 0%, #b89550 100%);  /* Gold gradient (fallback) */
-    background-image: url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=1600');  /* Background image */
-    background-size: cover;              /* Scales image to cover entire area */
-    background-position: center;         /* Centers the background image */
-    background-blend-mode: overlay;      /* Blends gradient with image (tints image gold) */
-    
-    /* Layout */
-    padding: 100px 20px;                 /* 100px top/bottom, 20px left/right */
-    text-align: center;                  /* Centers text */
-    color: #fff;                         /* White text color */
+    background: linear-gradient(135deg, #c9a961 0%, #b89550 100%);
+    background-image: url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
 }
 
-/* 
-   PROMO CONTENT CONTAINER
-   Limits width and centers content
-*/
 .promo-content {
-    max-width: 700px;                    /* Maximum width of 700px */
-    margin: 0 auto;                      /* Centers horizontally */
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* 
-   PROMO TITLE
-   Main heading for promotional offer
-*/
 .promo-title {
-    font-size: 48px;                     /* Large text */
-    margin-bottom: 20px;                 /* Space below title */
-    font-weight: 700;                    /* Bold weight */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);  /* Shadow for readability */
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 
-   PROMO TEXT
-   Description of the promotional offer
-*/
 .promo-text {
-    font-size: 20px;                     /* Medium text size */
-    margin-bottom: 35px;                 /* Space before button */
-    font-weight: 300;                    /* Light weight */
-    letter-spacing: 1px;                 /* Slight letter spacing */
+    font-size: 20px;
+    margin-bottom: 35px;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
-/* 
-   SECONDARY BUTTON (Explore Deals button)
-   White button that inverts colors on hover
-*/
 .btn-secondary {
-    display: inline-block;               /* Allows padding and makes button clickable */
-    background-color: #fff;              /* White background */
-    color: #1a1a1a;                      /* Black text */
-    padding: 15px 40px;                  /* 15px top/bottom, 40px left/right */
-    font-size: 16px;                     /* Button text size */
-    font-weight: 600;                    /* Semi-bold */
-    text-transform: uppercase;           /* Makes text UPPERCASE */
-    letter-spacing: 1.5px;               /* Space between letters */
-    border-radius: 5px;                  /* Rounded corners */
-    transition: all 0.3s ease;           /* Smooth transition for all properties */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Shadow for depth */
+    display: inline-block;
+    background-color: #fff;
+    color: #1a1a1a;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* 
-   SECONDARY BUTTON HOVER EFFECT
-   Inverts colors (black background, white text)
-*/
 .btn-secondary:hover {
-    background-color: #1a1a1a;           /* Black background */
-    color: #fff;                         /* White text */
-    transform: translateY(-3px);         /* Moves button up by 3px */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);  /* Larger shadow */
+    background-color: #1a1a1a;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ========================================
-   FOOTER SECTION
-   Contains 4 columns with links and copyright
-   ======================================== */
-
-/* 
-   FOOTER CONTAINER
-   Dark background with light text
-*/
 footer {
-    background-color: #1a1a1a;           /* Almost black background */
-    color: #ccc;                         /* Light gray text */
-    padding: 60px 0 30px;                /* 60px top, 30px bottom, 0 left/right */
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 60px 0 30px;
 }
 
-/* 
-   FOOTER GRID
-   Creates 4 equal columns using CSS Grid
-*/
 .footer-grid {
-    display: grid;                       /* Enables CSS Grid layout */
-    grid-template-columns: repeat(4, 1fr);  /* Creates 4 equal columns */
-    gap: 40px;                           /* 40px space between columns */
-    margin-bottom: 40px;                 /* Space below grid before copyright */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
-/* 
-   FOOTER COLUMN HEADINGS
-   Column titles (About, Customer Service, etc.)
-*/
 .footer-column h4 {
-    color: #fff;                         /* White color for headings */
-    font-size: 18px;                     /* Medium text size */
-    margin-bottom: 20px;                 /* Space below heading */
-    font-weight: 600;                    /* Semi-bold */
-    text-transform: uppercase;           /* Makes text UPPERCASE */
-    letter-spacing: 1px;                 /* Space between letters */
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* 
-   FOOTER LIST ITEMS
-   Spacing between links in each column
-*/
 .footer-column ul li {
-    margin-bottom: 12px;                 /* 12px space between each link */
+    margin-bottom: 12px;
 }
 
-/* 
-   FOOTER LINKS
-   Individual link styling
-*/
 .footer-column ul li a {
-    color: #aaa;                         /* Light gray color */
-    font-size: 14px;                     /* Small text size */
-    transition: color 0.3s ease;         /* Smooth color change on hover */
+    color: #aaa;
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
-/* 
-   FOOTER LINK HOVER EFFECT
-   Changes color to gold on hover
-*/
 .footer-column ul li a:hover {
-    color: #c9a961;                      /* Gold color on hover */
+    color: #c9a961;
 }
 
-/* 
-   SOCIAL LINKS LIST
-   Vertical layout for social media links
-*/
 .social-links {
-    display: flex;                       /* Enables Flexbox */
-    flex-direction: column;              /* Stacks links vertically */
+    display: flex;
+    flex-direction: column;
 }
 
-/* 
-   FOOTER BOTTOM
-   Copyright and legal links section
-*/
 .footer-bottom {
-    text-align: center;                  /* Centers text */
-    padding-top: 30px;                   /* 30px space above */
-    border-top: 1px solid #333;          /* Thin border line on top */
-    color: #888;                         /* Gray text color */
-    font-size: 14px;                     /* Small text size */
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 14px;
 }
 
-/* 
-   FOOTER BOTTOM LINKS
-   Privacy Policy and Terms links
-*/
 .footer-bottom a {
-    color: #aaa;                         /* Light gray color */
-    transition: color 0.3s ease;         /* Smooth color change */
+    color: #aaa;
+    transition: color 0.3s ease;
 }
 
-/* 
-   FOOTER BOTTOM LINK HOVER
-   Changes to gold on hover
-*/
 .footer-bottom a:hover {
-    color: #c9a961;                      /* Gold color on hover */
+    color: #c9a961;
 }
 
-/* ================================================================================
-   RESPONSIVE DESIGN - MOBILE (MAX-WIDTH: 768PX)
-   Applies to smartphones and small tablets
-   Changes layout from horizontal to vertical, adjusts grid columns
-   ================================================================================ */
-
-/* 
-   @media query - CSS code inside only applies when screen is 768px or smaller
-*/
 @media (max-width: 768px) {
-    
-    /* ===== HEADER ADJUSTMENTS ===== */
-    
-    /* 
-       Changes header from horizontal to vertical layout
-    */
     .header-content {
-        flex-direction: column;          /* Stacks logo, nav, and icons vertically */
-        gap: 20px;                       /* 20px space between stacked items */
+        flex-direction: column;
+        gap: 20px;
     }
     
-    /* 
-       Smaller logo text for mobile
-    */
     .logo h1 {
-        font-size: 24px;                 /* Reduces from 28px to 24px */
+        font-size: 24px;
     }
     
-    /* ===== NAVIGATION ADJUSTMENTS ===== */
-    
-    /* 
-       Makes navigation full-width on mobile
-    */
     nav {
-        width: 100%;                     /* Takes full width of container */
+        width: 100%;
     }
     
-    /* 
-       Changes navigation from horizontal to vertical
-    */
     .nav-menu {
-        flex-direction: column;          /* Stacks menu items vertically */
-        gap: 15px;                       /* Reduces gap between items */
+        flex-direction: column;
+        gap: 15px;
     }
     
-    /* 
-       Smaller text for navigation links
-    */
     .nav-menu li a {
-        font-size: 14px;                 /* Reduces from 15px to 14px */
+        font-size: 14px;
     }
     
-    /* ===== HERO SECTION ADJUSTMENTS ===== */
-    
-    /* 
-       Shorter hero for mobile screens
-    */
     .hero {
-        height: 500px;                   /* Reduces from 600px to 500px */
-        padding: 20px;                   /* Adds padding on sides */
+        height: 500px;
+        padding: 20px;
     }
     
-    /* 
-       Smaller hero title for mobile
-    */
     .hero-title {
-        font-size: 36px;                 /* Reduces from 64px to 36px */
+        font-size: 36px;
     }
     
-    /* 
-       Smaller tagline text
-    */
     .hero-tagline {
-        font-size: 16px;                 /* Reduces from 20px to 16px */
-        margin-bottom: 25px;             /* Less space before button */
+        font-size: 16px;
+        margin-bottom: 25px;
     }
     
-    /* 
-       Smaller primary button on mobile
-    */
     .btn-primary {
-        padding: 12px 30px;              /* Reduces padding (was 15px 40px) */
-        font-size: 14px;                 /* Reduces from 16px to 14px */
+        padding: 12px 30px;
+        font-size: 14px;
     }
     
-    /* ===== CATEGORY SECTION ADJUSTMENTS ===== */
-    
-    /* 
-       Less padding for mobile screens
-    */
     .featured-categories {
-        padding: 50px 0;                 /* Reduces from 80px to 50px */
+        padding: 50px 0;
     }
     
-    /* 
-       Smaller section titles
-    */
     .section-title {
-        font-size: 32px;                 /* Reduces from 42px to 32px */
-        margin-bottom: 30px;             /* Less space below title */
+        font-size: 32px;
+        margin-bottom: 30px;
     }
     
-    /* 
-       IMPORTANT: Changes category grid to 1 column (stacks vertically)
-    */
     .category-grid {
-        grid-template-columns: 1fr;      /* 1 column instead of 4 (full width) */
-        gap: 25px;                       /* Slightly smaller gap */
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
     
-    /* 
-       Shorter category placeholders
-    */
     .category-placeholder {
-        height: 220px;                   /* Reduces from 280px to 220px */
+        height: 220px;
     }
     
-    /* ===== PRODUCT SECTION ADJUSTMENTS ===== */
-    
-    /* 
-       Less padding for products section
-    */
     .products {
-        padding: 50px 0;                 /* Reduces from 80px to 50px */
+        padding: 50px 0;
     }
     
-    /* 
-       IMPORTANT: Changes product grid to 2 columns (2 products per row)
-    */
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);  /* 2 columns instead of 4 */
-        gap: 20px;                       /* Smaller gap between products */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
-    /* 
-       Shorter product images
-    */
     .product-placeholder {
-        height: 200px;                   /* Reduces from 280px to 200px */
+        height: 200px;
     }
     
-    /* 
-       Less padding in product info
-    */
     .product-info {
-        padding: 15px;                   /* Reduces from 25px to 15px */
+        padding: 15px;
     }
     
-    /* 
-       Smaller product name text
-    */
     .product-name {
-        font-size: 16px;                 /* Reduces from 18px to 16px */
+        font-size: 16px;
     }
     
-    /* 
-       Smaller price text
-    */
     .product-price {
-        font-size: 18px;                 /* Reduces from 22px to 18px */
+        font-size: 18px;
     }
     
-    /* 
-       Smaller cart button
-    */
     .btn-cart {
-        padding: 10px 20px;              /* Reduces padding (was 12px 30px) */
-        font-size: 12px;                 /* Reduces from 14px to 12px */
+        padding: 10px 20px;
+        font-size: 12px;
     }
     
-    /* ===== PROMO BANNER ADJUSTMENTS ===== */
-    
-    /* 
-       Less padding for promo banner
-    */
     .promo-banner {
-        padding: 60px 20px;              /* Reduces from 100px to 60px */
+        padding: 60px 20px;
     }
     
-    /* 
-       Smaller promo title
-    */
     .promo-title {
-        font-size: 32px;                 /* Reduces from 48px to 32px */
+        font-size: 32px;
     }
     
-    /* 
-       Smaller promo text
-    */
     .promo-text {
-        font-size: 16px;                 /* Reduces from 20px to 16px */
+        font-size: 16px;
     }
     
-    /* 
-       Smaller secondary button
-    */
     .btn-secondary {
-        padding: 12px 30px;              /* Reduces padding (was 15px 40px) */
-        font-size: 14px;                 /* Reduces from 16px to 14px */
+        padding: 12px 30px;
+        font-size: 14px;
     }
     
-    /* ===== FOOTER ADJUSTMENTS ===== */
-    
-    /* 
-       Less padding for footer
-    */
     footer {
-        padding: 40px 0 20px;            /* Reduces from 60px 0 30px */
+        padding: 40px 0 20px;
     }
     
-    /* 
-       IMPORTANT: Changes footer to 1 column (stacks vertically)
-    */
     .footer-grid {
-        grid-template-columns: 1fr;      /* 1 column instead of 4 */
-        gap: 30px;                       /* Smaller gap between columns */
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
     
-    /* 
-       Smaller footer headings
-    */
     .footer-column h4 {
-        font-size: 16px;                 /* Reduces from 18px to 16px */
+        font-size: 16px;
     }
     
-    /* 
-       Smaller copyright text
-    */
     .footer-bottom {
-        font-size: 12px;                 /* Reduces from 14px to 12px */
+        font-size: 12px;
     }
-    
-} /* End of mobile media query */
-
-/* ================================================================================
-   RESPONSIVE DESIGN - TABLET (MAX-WIDTH: 1024PX, MIN-WIDTH: 769PX)
-   Applies to tablets and medium-sized screens
-   Optimizes layout for medium screens (between mobile and desktop)
-   ================================================================================ */
-
-/* 
-   @media query with range - applies only to screens between 769px and 1024px
-*/
-@media (max-width: 1024px) and (min-width: 769px) {
-    
-    /* ===== CATEGORY GRID ===== */
-    
-    /* 
-       Changes category grid to 2 columns (instead of 4)
-    */
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);  /* 2 equal columns */
-        gap: 25px;                       /* Slightly smaller gap */
-    }
-    
-    /* ===== PRODUCT GRID ===== */
-    
-    /* 
-       IMPORTANT: Changes product grid to 3 columns (instead of 4)
-       3 products per row on tablet screens
-    */
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
-        gap: 25px;                       /* Slightly smaller gap */
-    }
-    
-    /* ===== NAVIGATION ADJUSTMENTS ===== */
-    
-    /* 
-       Reduces space between navigation items
-    */
-    .nav-menu {
-        gap: 25px;                       /* Reduces from 35px to 25px */
-    }
-    
-    /* 
-       Smaller navigation link text
-    */
-    .nav-menu li a {
-        font-size: 14px;                 /* Reduces from 15px to 14px */
-    }
-    
-    /* ===== HERO ADJUSTMENTS ===== */
-    
-    /* 
-       Slightly smaller hero title for tablets
-    */
-    .hero-title {
-        font-size: 52px;                 /* Reduces from 64px to 52px */
-    }
-    
-    /* ===== SECTION TITLES ===== */
-    
-    /* 
-       Smaller section titles
-    */
-    .section-title {
-        font-size: 36px;                 /* Reduces from 42px to 36px */
-    }
-    
-    /* ===== FOOTER ===== */
-    
-    /* 
-       Changes footer to 2 columns (instead of 4)
-    */
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);  /* 2 equal columns */
-        gap: 35px;                       /* Space between columns */
-    }
-    
-} /* End of tablet media query */
-
-/* ================================================================================
-   HOVER EFFECTS & TRANSITIONS
-   Additional enhancements for user experience
-   ================================================================================ */
-
-/* 
-   SMOOTH SCROLLING
-   When clicking anchor links, page scrolls smoothly instead of jumping
-*/
-html {
-    scroll-behavior: smooth;             /* Enables smooth scrolling for entire page */
 }
 
-/* 
-   FOCUS STATES FOR ACCESSIBILITY
-   Shows visible outline when user tabs through links/buttons (keyboard navigation)
-*/
+@media (max-width: 1024px) and (min-width: 769px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .nav-menu {
+        gap: 25px;
+    }
+    
+    .nav-menu li a {
+        font-size: 14px;
+    }
+    
+    .hero-title {
+        font-size: 52px;
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 a:focus,
 button:focus {
-    outline: 2px solid #c9a961;          /* Gold outline (2px thick) */
-    outline-offset: 3px;                 /* 3px space between outline and element */
+    outline: 2px solid #c9a961;
+    outline-offset: 3px;
 }
 
-/* 
-   LOADING ANIMATION FOR PLACEHOLDERS
-   Fade-in effect when page loads
-*/
 .product-placeholder,
 .category-placeholder {
-    animation: fadeIn 0.5s ease-in;      /* Applies fadeIn animation (0.5 seconds) */
+    animation: fadeIn 0.5s ease-in;
 }
 
-/* 
-   KEYFRAMES FOR FADE-IN ANIMATION
-   Defines how the fade-in animation works
-*/
 @keyframes fadeIn {
     from {
-        opacity: 0;                      /* Starts invisible (0% opacity) */
+        opacity: 0;
     }
     to {
-        opacity: 1;                      /* Ends fully visible (100% opacity) */
+        opacity: 1;
     }
 }
-
-/* ================================================================================
-   END OF STYLESHEET
-   ================================================================================ */
